@@ -11,6 +11,7 @@ Uploads the tarred file to S3 and deletes the tarred file from the local server.
 
 # Setup
 
+1. sudo su
 1. Install aws cli. See https://docs.aws.amazon.com/cli/latest/userguide/installing.html for instructions.
 1. Configure aws cli to work with your AWS account: `aws configure`. 
 You can access or generate your AWS security credentials here.
@@ -24,4 +25,8 @@ You can access or generate your AWS security credentials here.
 1. Edit your crontab: `crontab -e`.
 1. Add the following line to your crontab. This will execute the backup script at 2am every day and will email you the results of the run.
 
- `0 2 * * * /opt/scripts/mysql-dump-to-s3-bucket.sh |mail -s "Backup Mysql to S3 Output" -c email@exmaple.com`
+`0 2 * * * /opt/scripts/mysql-dump-to-s3-bucket.sh |mail -s "Backup Mysql to S3 Output" -c email@exmaple.com`
+ 
+OR simply
+ 
+`0 8 * * * /opt/scripts/mysql-dump-to-s3-bucket.sh`
