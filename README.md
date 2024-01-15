@@ -15,7 +15,8 @@ Uploads the tarred file to S3 and deletes the tarred file from the local server.
 1. Install aws cli. See https://docs.aws.amazon.com/cli/latest/userguide/installing.html for instructions.
 1. Configure aws cli to work with your AWS account: `aws configure`. 
 You can access or generate your AWS security credentials here.
-Please make sure your $USER should be able to see ~/.aws folder. Thats why I set creds from root by doing sudo su.
+
+Please make sure your $USER should be able to see ~/.aws folder. Thats why I run `aws configure` from root by doing `sudo su`.
 1. Create an S3 bucket: `aws s3 mb s3://my-database-backups`.
 1. Put the mysql-dump-to-s3-bucket.sh backup script somewhere on your server (ie - /opt/scripts).
 1. Give the mysql-dump-to-s3-bucket.sh script 755 permissions: `chmod 755 /opt/scripts/mysql-dump-to-s3-bucket.sh`.
